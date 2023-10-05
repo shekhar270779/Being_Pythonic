@@ -65,7 +65,7 @@ else:
     print("r1 and r2 are not equal")
 
 r3 = Rectangle(4, 4)
-r4 = Rectangle(10,  10)
+r4 = Rectangle(10, 10)
 
 if r1 < r3:
     print(f"{r1} is less than {r3}")

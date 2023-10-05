@@ -20,6 +20,7 @@ def hello(name=""):
     '''
     print(f"Hello {name}!!")
 
+
 hello()
 hello("Shekhar")
 
@@ -27,6 +28,7 @@ hello("Shekhar")
 # where are docstrings stored ?
 # functions have __doc__ property where it is stored
 print(hello.__doc__)
+
 
 def fact(n):
     ''' Calculates factorial of number n
@@ -36,10 +38,12 @@ def fact(n):
     if n < 1:
         return 1
     else:
-        return n * fact(n-1)
+        return n * fact(n - 1)
+
 
 print(fact(5))
 print(fact.__doc__)
+
 
 # functions annotations are another way to document functions
 # PEP3107
@@ -61,11 +65,12 @@ print(f"echo doc: {echo.__doc__}")
 # print(f" {help(echo)}")
 print(f"annotation: {echo.__annotations__}")
 
+
 # enhanced version of annotations is type hints
 
-def wish(msg:'enter a lovely message for wishing someone',
+def wish(msg: 'enter a lovely message for wishing someone',
          person: 'enter person to whom to wish',
-         n: 'how many times to wish'=1) -> 'message to be wished':
+         n: 'how many times to wish' = 1) -> 'message to be wished':
     '''
     wish function wishes a person with a message
     :param msg: message to be wished
@@ -73,14 +78,16 @@ def wish(msg:'enter a lovely message for wishing someone',
     :param n: how many times to wish
     :return: message for which
     '''
-    return(f"Hello {person}, {msg}" * n)
+    return (f"Hello {person}, {msg}" * n)
+
 
 print(wish("Happy B'day", "Rayaan"))
 print(wish.__doc__)
 print(wish.__annotations__)
 
-def some_fun(a: str='',
-             b: int=1,
+
+def some_fun(a: str = '',
+             b: int = 1,
              *args: 'some positional arguments',
              k1: 'kew word arg-1',
              k2: 'kew word arg-2',
@@ -99,5 +106,5 @@ def some_fun(a: str='',
     print(a, b, args, k1, k2, kwargs)
     return (a + '\n') * b
 
-print(some_fun('khul ja sim sim', 2, 7, 8, 9, k1="ali", k2="baba", k3="40", k4="thieves"))
 
+print(some_fun('khul ja sim sim', 2, 7, 8, 9, k1="ali", k2="baba", k3="40", k4="thieves"))

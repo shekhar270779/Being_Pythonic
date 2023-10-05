@@ -17,7 +17,7 @@ print(f"my_var is pointing to object of type: {type(my_var)} and object is {my_v
 my_var = "hello"
 print(f"my_var is pointing to object of type: {type(my_var)} and object is {my_var}")
 
-my_var = lambda x : x * 5
+my_var = lambda x: x * 5
 print(f"my_var is pointing to object of type: {type(my_var)} and for arg 2 , value is {my_var(2)}")
 
 a_var = 10
@@ -47,12 +47,13 @@ print(f"tuple: {t}")
 
 my_list = [11, 12, 4]
 print(f"memory address of my_list : {hex(id(my_list))}")
-my_list.append(15) # it changes internal state of list, so memory address of my_list will not change
+my_list.append(15)  # it changes internal state of list, so memory address of my_list will not change
 print(f"memory address of my_list : {hex(id(my_list))}")
 
 # concatenation changes creates a new list
 my_list = my_list + [16]
 print(f"memory address of my_list : {hex(id(my_list))}")
+
 
 # function arguments and mutability
 
@@ -64,10 +65,12 @@ def greet(s):
     print(f"s: {s}, id of s: {hex(id(s))}")
     return s
 
+
 my_str = "World"
 print(f"my_str: {my_str}, id of s: {hex(id(my_str))}")
-print(greet(my_str)) # reference of my_str is passed to greet()
+print(greet(my_str))  # reference of my_str is passed to greet()
 print(f"my_str: {my_str}, id of s: {hex(id(my_str))}")
+
 
 # mutable objects are not safe from unintended side effects
 def process(lst):
@@ -81,7 +84,7 @@ print(my_list)
 
 # Term shared reference means two variable referencing same object in memory
 
-x = [1,2,3]
+x = [1, 2, 3]
 y = x
 print(f"{hex(id(x)) == hex(id(y))}")
 print(x, y)
@@ -97,10 +100,10 @@ v = 1000
 print(f"{hex(id(u))}, {hex(id(v))}")
 
 # python does not create shared memory reference for immutable object
-l = [1,2,3,4]
-m = [1,2,3,4]
+l = [1, 2, 3, 4]
+m = [1, 2, 3, 4]
 print(f"{hex(id(l))}, {hex(id(m))}")
-print(f"{l==m}")
+print(f"{l == m}")
 
 ## variable comparison
 # we can compare memory address of variables with operator 'is'
@@ -122,15 +125,3 @@ b = None
 print(f"id of a: {hex(id(a))}")
 print(f"id of b: {hex(id(b))}")
 print(f"{a is None}")
-
-
-
-
-
-
-
-
-
-
-
-

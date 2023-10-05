@@ -16,7 +16,7 @@ print(f"{hex(id(x))} --> {x}")
 message = "Hello"
 print(f"{hex(id(message))} --> {message}")
 
-y = x    # point y to same reference as x is pointing to in memory
+y = x  # point y to same reference as x is pointing to in memory
 print(f"{hex(id(y))} --> {y}")
 
 print(f"y and x have same reference ? {y is x}")
@@ -27,7 +27,7 @@ print(f"Reference count of x : {ctypes.c_long.from_address(id(x)).value}")
 
 # list
 my_list = [11, 3, 6, 7, 9, 13, 23, 15, 1]
-print(f"Ref count for my_list: {sys.getrefcount(my_list)-1}")
+print(f"Ref count for my_list: {sys.getrefcount(my_list) - 1}")
 print(f"Ref count for my_list: {ctypes.c_long.from_address(id(my_list)).value}")
 
 your_list = my_list
@@ -57,6 +57,7 @@ class A:
     def __init__(self):
         self.b = B(self)
         print(f"A --> self: {hex(id(self))}, self.b: {hex(id(self.b))}")
+
 
 class B:
     def __init__(self, a):
@@ -94,6 +95,3 @@ print(f"ref_count of id_a ({hex(id_a)}): {ref_count(id_a)}")
 print(f"ref_count of id_b ({hex(id_b)}): {ref_count(id_b)}")
 
 gc.enable()
-
-
-

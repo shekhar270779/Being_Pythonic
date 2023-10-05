@@ -2,7 +2,7 @@
 # Functions have attributes like __doc__, __annotations__
 # we can attach our own attribute with functions
 
-def my_fun(a:'number'=0, b:'number'=0, *, verbose=False) -> 'number':
+def my_fun(a: 'number' = 0, b: 'number' = 0, *, verbose=False) -> 'number':
     '''
     This function returns sum of two input numbers
     :param a: first input number
@@ -28,10 +28,10 @@ print(my_fun.__annotations__)
 print(dir(my_fun))
 
 x = my_fun
-print(x(10,20))
-print(x.__name__) # __name__ represents name of the function
-print(x.__defaults__) # to get default values of positional parameters
-print(x.__kwdefaults__) # to get default values of key word arguments
+print(x(10, 20))
+print(x.__name__)  # __name__ represents name of the function
+print(x.__defaults__)  # to get default values of positional parameters
+print(x.__kwdefaults__)  # to get default values of key word arguments
 print(my_fun.__code__.co_varnames)
 print(my_fun.__code__.co_argcount)
 
@@ -42,13 +42,14 @@ print(inspect.isfunction(my_fun), inspect.ismethod(my_fun))
 print("Source Code of my_fun is")
 print(inspect.getsource(my_fun))
 
-p2 = lambda x : x ** 2
+p2 = lambda x: x ** 2
 # to get source code of function
 print(inspect.getsource(p2))
 
 # to find module in which function was created
 print(inspect.getmodule(p2))
 print(inspect.getmodule(print))
+
 
 def find_nth_largest(n, *args) -> 'nth largest number':
     '''
@@ -60,17 +61,21 @@ def find_nth_largest(n, *args) -> 'nth largest number':
     # TODO: complete the code
     pass
 
+
 print(inspect.getcomments(find_nth_largest))
 
-def f(a: int, b:int=2, c:'string'=None,  *args:'additional position args', s, d='key-2', **kwargs):
+
+def f(a: int, b: int = 2, c: 'string' = None, *args: 'additional position args', s, d='key-2', **kwargs):
     pass
 
-print('_'*50)
+
+print('_' * 50)
 for param in inspect.signature(f).parameters.values():
     print(f"{param.name}, {param.default}, {param.annotation}, {param.kind}")
 
+
 # TODO: complete this function
-def f(a:'mandatory positional',
+def f(a: 'mandatory positional',
       b: 'optional positional parameter' = 2,
       c: 'optional positional parameter' = 3,
       *args: 'other positional parameters',
@@ -89,9 +94,10 @@ def f(a:'mandatory positional',
     :param kwargs: optional key word parameters
     :return:
     '''
-    i, j = 10 , 20
-    print(a,b,c,args,kw1,kw2,kw3,kwargs)
-    return i +j
+    i, j = 10, 20
+    print(a, b, c, args, kw1, kw2, kw3, kwargs)
+    return i + j
+
 
 print(f.__doc__)
 print(f.__annotations__)
@@ -99,11 +105,14 @@ f.short_desc = 'a simple function'
 print(f.short_desc)
 print(dir(f))
 
+
 def call_f(afunc):
     print(afunc.__name__)
 
+
 def hello():
     return 'hello ' + x
+
 
 def bye():
     return 'bye ' + x
@@ -121,9 +130,11 @@ from inspect import isfunction, ismethod, isroutine
 
 print(isfunction(f), ismethod(f), isroutine(f))
 
+
 class MyClass:
     def f1(self):
         pass
+
 
 a = MyClass()
 print(ismethod(a.f1), isfunction(MyClass.f1))
@@ -139,7 +150,7 @@ for param in sig.parameters.values():
     print(f"Default: {param.default}")
     print(f"Annotation: {param.annotation}")
     print(f"Kind:{param.kind}")
-    print("_"*30)
+    print("_" * 30)
 
 for param in inspect.signature(divmod).parameters.values():
     print(param.name, param.kind)
@@ -154,6 +165,7 @@ for param in inspect.signature(divmod).parameters.values():
 
 print(f"is print callable? {callable(print)}")
 print(f"string method is callable ? {callable('abc'.upper)}")
+
 
 # different types of callables
 # builtin functions: len, print
@@ -172,6 +184,7 @@ class MyClass:
         print('updating counter...')
         self.counter += x
 
+
 m = MyClass(100)
 print(callable(MyClass), callable(a))
 
@@ -182,13 +195,3 @@ print(n.counter)
 print(callable(n))
 n(60)
 print(n.counter)
-
-
-
-
-
-
-
-
-
-

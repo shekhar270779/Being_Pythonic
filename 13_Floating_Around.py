@@ -19,6 +19,7 @@ print(f"{.1:.20f}")
 print(f"{float(10)}, {float(12.5)}, {float('15')}")
 
 from fractions import Fraction
+
 pi = Fraction('22/7')
 print(f"pi in float: {float(pi)}")
 
@@ -40,17 +41,20 @@ print(f"rounding whole expression: equality test: {x == y}")
 # than some range (epsilon)
 
 import math
+
+
 def is_equal(x, y, tolerance):
     return math.fabs(x - y) < tolerance
 
+
 x = 0.1 + 0.1 + 0.1
 y = 0.3
-print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x-y:.20f}")
+print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x - y:.20f}")
 print(f"absolute tolerance: {is_equal(x, y, 1E-15)}")
 
 x = 10000.1 + 10000.1 + 10000.1
 y = 30000.3
-print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x-y:.20f}")
+print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x - y:.20f}")
 print(f"absolute tolerance: {is_equal(x, y, 1E-15)}")
 
 # use relative tolerance
@@ -58,13 +62,13 @@ absolute_tolerance = 1E-15
 relative_tolerance = absolute_tolerance * max(abs(x), abs(y))
 x = 0.1 + 0.1 + 0.1
 y = 0.3
-print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x-y:.20f}")
+print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x - y:.20f}")
 print(f"relative tolerance: {is_equal(x, y, relative_tolerance)}")
 
 relative_tolerance = absolute_tolerance * max(abs(x), abs(y))
 x = 10000.1 + 10000.1 + 10000.1
 y = 30000.3
-print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x-y:.20f}")
+print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x - y:.20f}")
 print(f"relative tolerance: {is_equal(x, y, relative_tolerance)}")
 
 # combine absolute and relative tolerance
@@ -74,16 +78,15 @@ relative_tolerance = abs_tolerance * max(abs(x), abs(y))
 tolerance = max(abs_tolerance, relative_tolerance)
 x = 0.1 + 0.1 + 0.1
 y = 0.3
-print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x-y:.20f}")
+print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x - y:.20f}")
 print(f"combined tolerance: {is_equal(x, y, tolerance)}")
-
 
 abs_tolerance = 1E-15
 relative_tolerance = abs_tolerance * max(abs(x), abs(y))
 tolerance = max(abs_tolerance, relative_tolerance)
 x = 10000.1 + 10000.1 + 10000.1
 y = 30000.3
-print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x-y:.20f}")
+print(f"x:{x:.20f}, y:{y:.20f}, x-y: {x - y:.20f}")
 print(f"combined tolerance: {is_equal(x, y, tolerance)}")
 
 # use math module
@@ -91,10 +94,7 @@ print(f"combined tolerance: {is_equal(x, y, tolerance)}")
 
 x = 0.1 + 0.1 + 0.1
 y = 0.3
-print(f"{math.isclose(x,y,abs_tol=1e-15)}")
+print(f"{math.isclose(x, y, abs_tol=1e-15)}")
 x = 10000.1 + 10000.1 + 10000.1
 y = 30000.3
-print(f"{math.isclose(x,y,abs_tol=1e-15)}")
-
-
-
+print(f"{math.isclose(x, y, abs_tol=1e-15)}")

@@ -41,7 +41,6 @@ for attempt in range(3):
         else:
             print('all attempts exhausted')
 
-
 # continue
 for i in range(11):
     if i % 2 == 0:
@@ -49,9 +48,8 @@ for i in range(11):
     print(i, end=', ')
 print()
 
-
 # add number in list if not already there
-nums = [1, 11, 5, 7,9]
+nums = [1, 11, 5, 7, 9]
 x = int(input("enter a number:"))
 # using else of while loop
 idx = 0
@@ -66,17 +64,16 @@ else:
 
 print(f"list: {nums}")
 
-
 ##
 x, y = 0, 3
 
 while x < 6:
     x += 1
     y -= 1
-    print('-'*30)
+    print('-' * 30)
 
     try:
-        result = x/y
+        result = x / y
     except ZeroDivisionError:
         print(f"Zero division error: {x}/{y}")
         # continue
@@ -86,7 +83,6 @@ while x < 6:
     print(f"result: {result}")
 else:
     print("else block of finally")
-
 
 # In Python, an iterable is an object capable of returning values one at a time
 
@@ -101,7 +97,7 @@ for tens, unit in [(1, 2), (3, 4), (5, 6)]:
 # else in for loop
 for i in range(5):
     try:
-        res = 15 / (i-2)
+        res = 15 / (i - 2)
     except ZeroDivisionError:
         print('zero division error hit')
         break
@@ -114,4 +110,3 @@ else:
 message = 'Hello'
 for i, x in enumerate(message):
     print(f"index {i}: {x}")
-

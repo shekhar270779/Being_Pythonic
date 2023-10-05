@@ -3,8 +3,8 @@
 from fractions import Fraction
 
 pi = Fraction(numerator=22, denominator=7)
-half = Fraction(1,2)
-one_third = Fraction(1,3)
+half = Fraction(1, 2)
+one_third = Fraction(1, 3)
 print(f"{pi}, {half}, {one_third}")
 
 x = 12 * half
@@ -40,6 +40,3 @@ print(x.limit_denominator(100))
 
 y = Fraction(0.3).limit_denominator(10)
 print(f"{y}")
-
-
-
